@@ -17,15 +17,17 @@ public class Game {
     }
     public static void forkOne(){
         Scanner input = new Scanner(System.in);
-        System.out.println("You are standing on a road, a forest is to the West, the Road leads North. ");
-        System.out.println("What would you like to do? \n 1. Go to the forest \n 2. Take the road that leads North");
+        System.out.println("You are standing on a road, a forest is to the West, the Road leads North. To the east you see a sword sticking out of a large Boulder.");
+        System.out.println("What would you like to do? \n 1. Go to the forest \n 2. Take the road that leads North\n3.Take the sword.");
         char choice1= input.next().charAt(0);
         if(choice1 == '2'){
-            System.out.println("Wrong path");
+            System.out.println("A troll is guarding the road.\n He spots you and comes running at you. \n He crushes you beneath his thumb.\n Game Over.");
         }else if(choice1 == '1'){
             forkTwo();
+        }else if(choice1 == '3'){
+            forkOneB();
         }else{
-            System.out.println("Please enter valid response [1/2]");
+            System.out.println("Please enter valid response [1/2/3]");
             forkOne();
         }
     }
@@ -35,17 +37,31 @@ public class Game {
         System.out.println("Which do you follow? \n 1. Stream \n 2. Path");
         char choice2= input.next().charAt(0);
         if(choice2 == '2'){
-            System.out.println("Wrong path");
+            System.out.println("You find a giant snake.\n He uncoils and swallows you whole.\n Game Over.");
         }else if(choice2 == '1'){
             System.out.println("You have found your Boat, congratulations!");
         }else{
             System.out.println("Please enter valid response [1/2]");
             forkTwo();
         }
+    }
 
+    public static void forkOneB(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("You are standing on a road, a forest is to the West, the Road leads North.");
+                System.out.println("What would you like to do? \n 1. Go to the forest \n 2. Take the road that leads North\n3.Take the sword.");
+        char choice1= input.next().charAt(0);
+        if(choice1 == '2'){
+            System.out.println("A troll is guarding the road.\n He spots you and comes running at you. \n He crushes you beneath his thumb.\n Game Over.");
+        }else if(choice1 == '1') {
+            forkTwo();
+        }else{
+                System.out.println("Please enter valid response [1/2]");
+                forkOneB();
+            }
     }
     public static void main(String[] args) {
-       gameStart();
+        Boolean hasSword = false;
+        gameStart();
     }
-
 }
