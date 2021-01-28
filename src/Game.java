@@ -57,13 +57,30 @@ public class Game {
         char choice2= input.next().charAt(0);
         if(choice2 == '2'){
             //If bool - if- true continue to 3 -else exit
-            System.out.println("You find a giant snake.\n He uncoils and swallows you whole.\n Game Over.");
+            System.out.println("You find a giant snake.\n He uncoils and swallows you whole.\n You killed the snake.");
+            System.out.println("Present other options");//uses sword and continues
             System.exit(0);
         }else if(choice2 == '1'){
             System.out.println("You have found your Boat, congratulations!");
         }else{
             System.out.println("Please enter valid response [1/2]");
             forkTwo(hasSwordTwo);
+        }
+    }
+    public static void  forkTwo(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("You have chosen the brave path. \n You have come to a Stream and there is also a Path.");
+        System.out.println("Which do you follow? \n 1. Stream \n 2. Path");
+        char choice2= input.next().charAt(0);
+        if(choice2 == '2'){
+            //If bool - if- true continue to 3 -else exit
+            System.out.println("You find a giant snake.\n He uncoils and swallows you whole.\n Game Over.");
+            System.exit(0);
+        }else if(choice2 == '1'){
+            System.out.println("You have found your Boat, congratulations!");
+        }else{
+            System.out.println("Please enter valid response [1/2]");
+            forkTwo();
         }
     }
 
