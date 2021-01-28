@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Game {
     public static void gameStart(boolean hasSwordStart){
+        System.out.println("Welcome to \'A Series of Dangerous Forks\'\nBy: Phoebe and Nick");
         System.out.println("Would you like to play the game? [y/n] ");
         Scanner input = new Scanner(System.in);
         char response =input.next().charAt(0);
@@ -57,8 +58,7 @@ public class Game {
         char choice2= input.next().charAt(0);
         if(choice2 == '2'){
             //If bool - if- true continue to 3 -else exit
-            System.out.println("You find a giant snake.\n He uncoils and swallows you whole.\n You killed the snake.");
-            System.out.println("Present other options");//uses sword and continues
+            System.out.println("You find a giant snake.\n He uncoils and attacks you.\n But you slice him up.\n He was guarding a treasure chest! Congratulations!");
             System.exit(0);
         }else if(choice2 == '1'){
             System.out.println("You have found your Boat, congratulations!");
